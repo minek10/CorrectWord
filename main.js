@@ -95,13 +95,13 @@ function RestartGame(){
 function dicoChoice(){
 
   rndDico =  Math.floor(Math.random() * 2) 
-  console.log(rndDico)
+  //console.log(rndDico)
   if (rndDico == 0){
     fichierTxt = "./Mots_corrects.txt"
   }else{
     fichierTxt = "./Mots_incorrects.txt"
   }
-  console.log(fichierTxt)
+  //console.log(fichierTxt)
 }
 
 //Fetch sur le dictionnaire choisi,
@@ -116,8 +116,8 @@ function dicoRndGeneration (){
                   //console.log(data)
                   nbMot = data.split('\n').length
                   rnd = Math.floor(Math.random() * nbMot) 
-                  console.log("rnd = " + rnd)
-                  console.log("Mot rnd = " + data.split('\n')[rnd])
+                  //console.log("rnd = " + rnd)
+                  //console.log("Mot rnd = " + data.split('\n')[rnd])
                   //mot = data.split('\n')[rnd];
                   //console.log("total mot = " + nbMot)
   });
@@ -140,7 +140,7 @@ function dicoRndGeneration (){
 
  btns.style.display = "block";
   //btnN.style.display="block";
-  console.log(btns)
+  //console.log(btns)
 
 }
 
@@ -165,7 +165,7 @@ function connexionState(){
     })
     .then(function(value) {
      playerName = value;
-     console.log('console player apres popup' + playerName.value)
+     //console.log('console player apres popup' + playerName.value)
      if (playerName.value == ""){
        playerName.value = "Joueur 1"
      }
@@ -198,7 +198,7 @@ function generateAndShowWord(){
   });
 
    //Générer le mot bien orthographié si mots_incorrect est selectionné
-   console.log(fichierTxt)
+   //console.log(fichierTxt)
    if (fichierTxt =="./Mots_incorrects.txt"){
     fetch("./Mots_corrects.txt")
     .then(response => response.text())
@@ -207,7 +207,7 @@ function generateAndShowWord(){
                     //console.log(" setTimeut 2 Mot rnd = " + data.split('\n')[rnd])
                     motCorrect = data.split('\n')[rnd].toUpperCase();
                     //console.log("total mot = " + nbMot)
-                    console.log("Mot correct si mal orthographié : " + motCorrect.toUpperCase() + " rnd: " + rnd)
+                    //console.log("Mot correct si mal orthographié : " + motCorrect.toUpperCase() + " rnd: " + rnd)
                    
 
     });
@@ -231,7 +231,7 @@ function btnOui() {
   btns.style.display = "none";
   StopInterval();
   
-  console.log(fichierTxt)
+  //console.log(fichierTxt)
   if (fichierTxt === "./Mots_corrects.txt"){
     clearTimeout(setinterval);
     score += 1;
@@ -250,7 +250,7 @@ function btnOui() {
       }
     })
   }else{
-    console.log("Perdu");
+    //console.log("Perdu");
     Swal.fire({
       icon: 'error',
       title: 'Oups... Perdu ' + playerName.value,
@@ -269,7 +269,7 @@ function btnNon() {
   btns.style.display = "none";
   StopInterval();
 
-  console.log(fichierTxt)
+  //console.log(fichierTxt)
   if (fichierTxt === "./Mots_incorrects.txt"){
     score += 1;
     scoreLabel.innerText = score;
@@ -286,7 +286,7 @@ function btnNon() {
       }
     })
   }else{
-    console.log("Perdu");
+    //console.log("Perdu");
     Swal.fire({
       icon: 'error',
       title: 'Oups... Perdu ' + playerName.value,
@@ -294,7 +294,7 @@ function btnNon() {
       confirmButtonText: 'Looser'
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log("Perdu");
+        //console.log("Perdu");
         RestartGame();
       }
     })
@@ -308,7 +308,7 @@ function progressBarFct(){
   progressbar.style.width = "100%";
   progressbar.style.backgroundColor = "rgb(0, 255, 0, 1)";
 
-  console.log("progress start");
+  //console.log("progress start");
   setinterval = setInterval(() => {
       fulltime--;
       timerLabel.innerText = "Temps restant : " + fulltime;
@@ -316,7 +316,7 @@ function progressBarFct(){
       progressbar.style.width = percent +"%";
 
 
-      console.log("TIME : " + fulltime);
+      //console.log("TIME : " + fulltime);
 
       //Variation couleur
       ColorBar(fulltime);
@@ -324,7 +324,7 @@ function progressBarFct(){
       if(fulltime == 0){
         progressbar.value = 0;
         progressbar.style.width = "0%";
-        console.log("REMISE a 0");
+        //console.log("REMISE a 0");
         clearTimeout(setinterval);
         compareScore();
         Timeout();
@@ -371,8 +371,8 @@ function ColorBar(fulltime){
 
 function StopInterval() {
   progressbar.value = 0;
-  console.log("setinterval" + setinterval);
-  console.log("CLOSE interval")
+  //console.log("setinterval" + setinterval);
+  //console.log("CLOSE interval")
   clearInterval(setinterval);
 }
 
@@ -382,13 +382,13 @@ function compareScore(){
       bestScore = score
       bestScoreLabel.innerText = bestScore
   }
-    console.log("score " + score)
-    console.log("bestScore " + bestScore)
+    //console.log("score " + score)
+    //console.log("bestScore " + bestScore)
 }
 
 function Timeout(){
 
-   console.log("Perdu TIMEOUT");
+   //console.log("Perdu TIMEOUT");
 
    if (fichierTxt === "./Mots_incorrects.txt"){
     Swal.fire({
