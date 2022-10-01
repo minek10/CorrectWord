@@ -1,0 +1,449 @@
+body{
+    overflow: hidden;
+    margin:0;
+    padding:0;
+    background-color: rgb(32, 145, 180);
+    font-family: 'Bahnschrift';
+    color: whitesmoke;
+    word-break: break-word;
+}
+
+button{
+    font-family: 'Bahnschrift';
+}
+
+
+#container{
+    //background-color: red;
+    height: 100vh;
+}
+
+#gameTitle{
+    //background-color: aqua;
+    height: 100%;
+}
+
+#connexionDiv{
+    //background-color: pink;
+    height: 90%;
+
+    #ConnexionLabel{
+        //background-color: red;
+        font-size: 25px;
+    }
+}
+
+#title{
+    //background-color: red;
+    font-size: 48px;
+    border-radius: 100% 0% 48% 52% / 0% 0% 100% 100% ;
+    background-color: whitesmoke;
+    padding: 10%;
+}
+
+#title1{
+    font-size: 48px;
+    //background-color: green;
+    padding: 5%;
+    //display: flex;
+    text-shadow: 2px 2px;
+    color: black;
+}
+
+#btnStart{
+    font-size: 36px;
+    background-color: transparent;
+    border: none;
+}
+
+
+.waviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: 60px;
+  }
+  .waviy span {
+    font-family: 'Alfa Slab One', cursive;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    
+  }
+  @keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+  }
+
+
+
+#wordDisplay{
+    //background-color: green;
+    height: 85%;
+
+    #titleLabel{
+        font-size: 25px;
+        //background-color: yellow;
+    }
+
+    #word{
+        font-size: 35px;
+        padding: 2%;
+        background: 50% 100% / 50% 50% no-repeat
+              radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: reveal 3000ms ease-in-out forwards 200ms,
+                   glow 2500ms linear infinite 2000ms;
+
+        @keyframes reveal {
+            80%{
+            letter-spacing: 8px;
+            }
+            100% {
+            background-size: 300% 300%;
+            }
+        }
+        @keyframes glow {
+            40% {
+            text-shadow: 0 0 8px #fff;
+            }
+        }
+    }
+
+      #btnY, #btnN {
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        font-family: 'Bahnschrift';
+      }
+      
+      .box {
+        color: white;
+        --width: 100px;
+        --height: calc(var(--width) / 3);
+        width: var(--width);
+        height: var(--height);
+        text-align: center;
+        line-height: var(--height);
+        font-size: calc(var(--height) / 2.5);
+        font-family: sans-serif;
+        letter-spacing: 0.2em;
+        border: 1px solid darkgoldenrod;
+        border-radius: 2em;
+        transform: perspective(500px) rotateY(-15deg);
+        text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+        position: relative;
+        overflow: hidden;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      
+      .box:hover {
+        transform: perspective(500px) rotateY(15deg);
+        text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .box::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, white, transparent);
+        left: -100%;
+        transition: 0.5s;
+      }
+      
+      .box:hover::before {
+        left: 100%;
+      }
+      
+      #btnY {
+        background: linear-gradient(to right, #15ff00, #15aa12);
+      }
+      
+      #btnN {
+        background: linear-gradient(to right, #d35c5c, #f31010);
+      }
+
+      #Timer{
+        font-size: 20px;
+      } 
+
+      #progressbar{
+        background-color: rgba(0, 255, 0, 1);
+      }
+
+    }
+
+@media screen and (min-width: 576px) {
+
+
+    #container{
+        width: 95%;
+        margin: auto;
+    }
+
+    #gameTitle{
+        width:90%;
+        //background-color: #15ff00;
+        margin: auto;
+    }
+
+    #btnStart{
+        span{
+            font-size: 40px;
+        }
+    }
+
+    #connexionDiv{
+    
+        #ConnexionLabel{
+            font-size: 35px;
+        }
+    }
+
+    #btnStart{
+        font-size: 36px;
+    }
+    
+
+    #wordDisplay{
+    
+        #titleLabel{
+            font-size: 35px;
+        }
+    
+        #word{
+            font-size: 40px;
+        }
+    
+        #Timer{
+            font-size: 25px;
+        }   
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    #connexionDiv{
+    
+        #ConnexionLabel{
+            font-size: 35px;
+        }
+    }
+
+    #gameTitle{
+        width:90%;
+    }
+
+    #title{
+        //background-color: red;
+        font-size: 52px;
+        padding: 5%;
+    }
+    
+    #title1{
+        font-size: 50px;
+    }
+
+    #btnStart{
+        span{
+            font-size: 45px;
+        }
+    }
+
+
+    #wordDisplay{
+
+        
+        #btnY {
+            font-size: 16px;
+          }
+          
+          #btnN {
+            font-size: 16px;
+          }
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    #container{
+        width: 90%;
+        margin: auto;
+    }
+
+    #gameTitle{
+        width:85%;
+    }
+
+    #title{
+        padding: 3%;
+    }
+    
+    #title1{
+        font-size: 52px;
+        padding: 5%;
+    }
+
+    #btnStart{
+        span{
+            font-size: 45px;
+        }
+    }
+
+
+    #connexionDiv{
+    
+        #ConnexionLabel{
+            font-size: 45px;
+        }
+    }
+
+    #wordDisplay{
+    
+        #titleLabel{
+            font-size: 40px;
+        }
+    
+        #word{
+            font-size: 45px;
+        }
+    
+        #Timer{
+            font-size: 30px;
+        }   
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    #container{
+        width: 85%;
+    }
+
+    #gameTitle{
+        width:80%;
+    }
+    
+    #title1{
+        font-size: 65px;
+        padding: 3%;
+    }
+
+    #connexionDiv{
+        height: 95%;
+
+        #ConnexionLabel{
+            font-size: 50px;
+        }
+    }
+
+    #wordDisplay{
+        height: 95%;
+        //background-color: #15ff00;
+        #titleLabel{
+            font-size: 45px;
+        }
+    
+        #word{
+            font-size: 50px;
+        }
+    
+        #Timer{
+            font-size: 30px;
+        }  
+        
+        #btnY, #btnN {
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+
+    #container{
+        width: 80%;
+    }
+
+    #gameTitle{
+        width:75%;
+    }
+
+    #title{
+        padding: 3%;
+    }
+    
+    #title1{
+        font-size: 65px;
+        padding: 3%;
+    }
+
+    #wordDisplay{
+        .box{
+            width: 10%;
+            height: 100%;
+            padding: 1%;
+        }
+        #btnY, #btnN {
+            font-size: 36px;
+        }
+    }
+
+
+}
+
+@media screen and (min-width: 1900px) {
+
+    #container{
+        width: 75%;
+    }
+
+    #gameTitle{
+        width:100%;
+        //background-color: brown;
+    }
+
+    #title{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1%;
+    }
+    
+    #title1{
+        font-size: 65px;
+    }
+
+    #wordDisplay{
+        .box{
+            width: 12%;
+            padding: 0.75%;
+        }
+        #btnY, #btnN {
+            font-size: 36px;
+        }
+    }
+}
+
+@media screen and (min-width: 2500px) {
+
+    #container{
+        width: 70%;
+    }
+
+    #wordDisplay{
+        //background-color: #15ff00;
+    }
+}
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js" defer></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navscore.css">
+    <!-- <link rel="stylesheet" href="./animation.css"> -->
+
+</head>
+<body>
+
+    <div id="container">
+
+        <!-- REGION navscore -->
+        <div id="navBar">
+            <div class="d-flex flex-nowrap justify-content-between py-3 px-3" id="navBar">
+                <div class="text-center">
+                    Score actuel <label id=score>0</label>
+                </div>
+                <div class="text-center">
+                    Nom du joueur<label id="playerName"></label>
+                </div>
+                <div class="text-center">
+                    Meilleure série <label id="bestScore">0</label>
+                </div>
+            </div>
+        </div>
+        <!-- END REGION -->
+        
+
+
+        <!-- REGION Game title -->
+        <div id="gameTitle">
+            <div class="d-flex flex-column justify-content-center text-center px-3" id="gameTitle" >
+
+                <div id="title" >
+                    <div id="title1">
+                        <span>LE MOT</span>
+                    </div>
+                    <div id="title1">
+                        <span>CORRECT </span>
+                    </div>
+                    <div id="title1">
+                        <span>ou pas ! </span>
+                    </div>
+                </div>
+                
+    
+                <div class="text-center mt-5">
+                    <button id="btnStart" class="text-center waviy" onclick="startGame()">
+                        <span style="--i:1">C</span>
+                        <span style="--i:2">O</span>
+                        <span style="--i:3">M</span>
+                        <span style="--i:4">M</span>
+                        <span style="--i:5">E</span>
+                        <span style="--i:6">N</span>
+                        <span style="--i:7">C</span>
+                        <span style="--i:8">E</span>
+                        <span style="--i:9">R</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <!-- END REGION Game title -->
+           
+       
+        <!-- REGION Chargement -->
+        <div id="connexionDiv">
+            <div class="d-flex flex-column justify-content-center text-center" id="connexionDiv" >
+                <label id="ConnexionLabel">Chargement <span class="spinner-grow" id="loading"></span> </label>
+            </div>
+        </div>
+        <!-- END REGION Chargement -->
+
+
+        <!-- REGION AFFICHAGE DU MOT -->
+            <div id="wordDisplay">
+                <div class="d-flex flex-column justify-content-center text-center" id="wordDisplay">
+                     <label id=titleLabel>Est-ce que le mot suivant est bien <!--<span id="strike">ortografié</span>--> orthographié ? </label> 
+                    <label id="word" class="text-center mt-5"></label>
+                    <div id="btn" class="mt-5">
+                        <button onclick="btnOui()" id="btnY" class="box">OUI</button>
+                        <button onclick="btnNon()" id="btnN" class="box">NON</button>
+                    </div>
+
+                    <div class="mt-5 px-5">
+                        <label for="file" id="Timer">Temps restant : 15</label>
+                        <div class="progress mt-4" id="progressbardiv">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" id="progressbar"></div>
+                        </div>
+                    </div>
+            </div>
+         <!-- END REGION AFFICHAGE MOT -->
+
+    </div>
+
+</body>
+</html>

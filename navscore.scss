@@ -1,0 +1,76 @@
+#navBar{
+ //background-color: greenyellow;
+ font-family: 'Bahnschrift';
+ text-transform: uppercase;
+ font-size: 14px;
+ display: none;
+}
+
+@media (min-width: 576px) {
+    #navBar{
+        //background-color: blue;
+        width: 95%;
+        margin: auto;
+        font-size: 15px;
+
+        #score, #bestScore{
+            font-size: 15px;
+        }
+       }    
+}
+
+@media (min-width: 768px) {
+    #navBar{
+        //background-color: red;
+        font-size: 16px;
+
+        #score, #bestScore{
+            font-size: 16px;
+        }
+       }    
+}
+
+@media (min-width: 992px) {
+    #navBar{
+        //background-color: blue;
+        width: 90%;
+        font-size: 17px;
+
+        #score, #bestScore{
+            font-size: 17px;
+        }
+       }    
+}
+
+@media (min-width: 1200px) {
+    #navBar{
+        //background-color: pink;
+        width: 85%;
+        font-size: 18px;
+
+        #score, #bestScore{
+            font-size: 18px;
+        }
+       }    
+}
+
+@media (min-width: 1600px) {
+    #navBar{
+        //background-color: violet;
+        width: 80%;
+       }    
+}
+
+@media (min-width: 1900px) {
+    #navBar{
+        //background-color: green;
+        width: 75%;
+       }    
+}
+
+@media (min-width: 2500px) {
+    #navBar{
+        //background-color: green;
+        width: 70%;
+       }    
+}
