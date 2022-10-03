@@ -254,7 +254,7 @@ function btnOui() {
     Swal.fire({
       icon: 'error',
       title: 'Oups... Perdu ' + playerName.value,
-      html: 'Le mot était bien orthographié ! <br>' + "Relis le Larousse et revient me voir =D <br> L'orthographe correcte était <b>" +motCorrect + "</b>",
+      html: 'Le mot était bien orthographié ! <br>' + "Relis le Larousse et reviens me voir =D <br> L'orthographe correcte était <b>" +motCorrect + "</b>",
       confirmButtonText: 'Looser'
     }).then((result) => {
       if (result.isConfirmed) {
